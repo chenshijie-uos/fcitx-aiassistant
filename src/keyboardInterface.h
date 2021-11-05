@@ -23,7 +23,7 @@
 /*
  * Proxy class for interface com.fcitx.aiassistant.server
  */
-class ComFcitxLittlesunServerInterface: public QDBusAbstractInterface
+class ComFcitxAiassistantServerInterface: public QDBusAbstractInterface
 {
     Q_OBJECT
 public:
@@ -31,9 +31,9 @@ public:
     { return "com.fcitx.aiassistant.server"; }
 
 public:
-    ComFcitxLittlesunServerInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent = nullptr);
+    ComFcitxAiassistantServerInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent = nullptr);
 
-    ~ComFcitxLittlesunServerInterface();
+    ~ComFcitxAiassistantServerInterface();
 
 public Q_SLOTS: // METHODS
     inline QDBusPendingReply<int> hideView()
@@ -62,7 +62,7 @@ Q_SIGNALS: // SIGNALS
 namespace com {
   namespace fcitx {
     namespace aiassistant {
-      typedef ::ComFcitxLittlesunServerInterface server;
+      typedef ::ComFcitxAiassistantServerInterface server;
     }
   }
 }

@@ -3,7 +3,7 @@
 #include <fcitx/module/dbus/fcitx-dbus.h>
 
 KeyboardBus::KeyboardBus(struct _FcitxAiassistantAddonInstance* aiassistant, QObject *parent) : QObject(parent)
-  , m_keyboardInter(new ComFcitxLittlesunServerInterface("com.fcitx.aiassistant.server",
+  , m_keyboardInter(new ComFcitxAiassistantServerInterface("com.fcitx.aiassistant.server",
                                                          "/keyboard",
                                                          QDBusConnection::sessionBus(), this))
 {

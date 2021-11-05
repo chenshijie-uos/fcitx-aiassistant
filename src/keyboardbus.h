@@ -20,7 +20,7 @@ public:
 
 private:
     _FcitxAiassistantAddonInstance* m_aiassistant;
-    ComFcitxLittlesunServerInterface* m_keyboardInter;
+    ComFcitxAiassistantServerInterface* m_keyboardInter;
     FcitxInstance* owner;
 
 signals:

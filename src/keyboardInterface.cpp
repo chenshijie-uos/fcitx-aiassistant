@@ -12,15 +12,15 @@
 #include "keyboardInterface.h"
 
 /*
- * Implementation of interface class ComFcitxLittlesunServerInterface
+ * Implementation of interface class ComFcitxAiassistantServerInterface
  */
 
-ComFcitxLittlesunServerInterface::ComFcitxLittlesunServerInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent)
+ComFcitxAiassistantServerInterface::ComFcitxAiassistantServerInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent)
     : QDBusAbstractInterface(service, path, staticInterfaceName(), connection, parent)
 {
 }
 
-ComFcitxLittlesunServerInterface::~ComFcitxLittlesunServerInterface()
+ComFcitxAiassistantServerInterface::~ComFcitxAiassistantServerInterface()
 {
 }
 
