@@ -1,0 +1,8 @@
+[Addon]
+Name=fcitx-aiassistant
+_GeneralName=aiassistant
+_Comment=aiassistant Wrapper For Fcitx
+Category=Module
+Enabled=True
+Library=fcitx-aiassistant.so
+Type=SharedLibrary
