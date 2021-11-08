@@ -24,7 +24,7 @@
 #include "common.h"
 
 extern "C" {
-    FCITX_DEFINE_PLUGIN(fcitx_aiassistant, ime2, FcitxIMClass2) = {
+    FCITX_DEFINE_PLUGIN(fcitx_aiassistant, module, FcitxIMClass2) = {
         FcitxAiassistantCreate,
         FcitxAiassistantDestroy,
         FcitxAiassistantReloadConfig,

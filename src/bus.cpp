@@ -53,7 +53,6 @@ FcitxAiassistantBus::FcitxAiassistantBus(struct _FcitxAiassistantAddonInstance* 
         dbus_connection_register_object_path(privconn, FCITX_AISSISTANT_PATH, &fcitxIPCVTable, this);
     }
 
-    printf("FcitxAiassistantBus(struct _FcitxAiassistantAddonInstance* aiassistant)\n");
 }
 
 FcitxAiassistantBus::~FcitxAiassistantBus()
@@ -68,7 +67,6 @@ FcitxAiassistantBus::~FcitxAiassistantBus()
 
 DBusHandlerResult FcitxAiassistantBus::dbusEvent(DBusConnection* connection, DBusMessage* message)
 {
-    printf("FcitxAiassistantBus::dbusEvent\n");
     DBusHandlerResult result = DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
     DBusMessage *reply = NULL;
     boolean flush = false;

@@ -13,7 +13,6 @@ include_directories (
     ${FCITX4_FCITX_UTILS_INCLUDE_DIRS}
     ${FCITX4_FCITX_CONFIG_INCLUDE_DIRS}
     ${FCITX4_FCITX_INCLUDE_DIRS}
-    ${LIBINTL_INCLUDE_DIR}
     )
 
 set( fcitx_aiassistant_sources
