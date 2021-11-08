@@ -2,6 +2,6 @@
 #define FCITX_AISSISTANT_COMMON_H
 
 #define FCITX_AISSISTANT_PATH "/aiassistant"
-#define FCITX_AISSISTANT_INTERFACE "org.fcitx.Fcitx.aiassistant"
+#define FCITX_AISSISTANT_INTERFACE "org.fcitx.Fcitx.Aiassistant"
 
 #endif // FCITX_AISSISTANT_COMMON_H

@@ -8,22 +8,25 @@
 #include <X11/keysym.h>
 
 const char *introspection_xml =
-    "<!DOCTYPE node PUBLIC \"-//freedesktop//DTD D-BUS Object Introspection 1.0//EN\"\n"
-    "\"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd\">\n"
-    "<node name=\"" FCITX_AISSISTANT_PATH "\">\n"
-    "  <interface name=\"org.freedesktop.DBus.Introspectable\">\n"
-    "    <method name=\"Introspect\">\n"
-    "      <arg name=\"data\" direction=\"out\" type=\"s\"/>\n"
-    "    </method>\n"
-    "  </interface>\n"
-    "  <interface name=\"" FCITX_AISSISTANT_INTERFACE "\">\n"
-    "    <method name=\"CommitString\">"
-    "      <arg name=\"str\" direction=\"in\" type=\"s\"/>\n"
-    "    </method>"
-    "    <method name=\"DeleteChar\">"
-    "    </method>"
-    "  </interface>\n"
-    "</node>\n";
+        "<!DOCTYPE node PUBLIC \"-//freedesktop//DTD D-BUS Object Introspection 1.0//EN\"\n"
+        "\"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd\">\n"
+        "<node name=\"" FCITX_AISSISTANT_PATH "\">\n"
+        "  <interface name=\"org.freedesktop.DBus.Introspectable\">\n"
+        "    <method name=\"Introspect\">\n"
+        "      <arg name=\"data\" direction=\"out\" type=\"s\"/>\n"
+        "    </method>\n"
+        "  </interface>\n"
+        "  <interface name=\"" FCITX_AISSISTANT_PATH "\">\n"
+        "    <method name=\"CommitString\">"
+        "      <arg name=\"str\" direction=\"in\" type=\"s\"/>\n"
+        "    </method>"
+        "    <method name=\"DeleteChar\">"
+        "    </method>"
+        "  </interface>\n"
+        "</node>\n";
+
+
+
 
 static DBusHandlerResult dbusEventHandler(DBusConnection* conn, DBusMessage* message, void* self) {
     FcitxAiassistantBus* bus = (FcitxAiassistantBus*) self;
@@ -38,21 +41,18 @@ FcitxAiassistantBus::FcitxAiassistantBus(struct _FcitxAiassistantAddonInstance* 
     if (conn == NULL && privconn == NULL) {
         FcitxLog(ERROR, "DBus Not initialized");
     }
-
     m_aiassistant = aiassistant;
     m_conn = conn;
     m_privconn = privconn;
 
     DBusObjectPathVTable fcitxIPCVTable = {NULL, &dbusEventHandler, NULL, NULL, NULL, NULL };
-
     if (conn) {
         dbus_connection_register_object_path(conn, FCITX_AISSISTANT_PATH, &fcitxIPCVTable, this);
     }
-
     if (privconn) {
         dbus_connection_register_object_path(privconn, FCITX_AISSISTANT_PATH, &fcitxIPCVTable, this);
     }
-
+    printf("FcitxAiassistantBus(struct _FcitxAiassistantAddonInstance* aiassistant)\n");
 }
 
 FcitxAiassistantBus::~FcitxAiassistantBus()
@@ -67,6 +67,7 @@ FcitxAiassistantBus::~FcitxAiassistantBus()
 
 DBusHandlerResult FcitxAiassistantBus::dbusEvent(DBusConnection* connection, DBusMessage* message)
 {
+    printf("FcitxAiassistantBus::dbusEvent\n");
     DBusHandlerResult result = DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
     DBusMessage *reply = NULL;
     boolean flush = false;

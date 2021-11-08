@@ -1,5 +1,5 @@
 [Addon]
-UniqueName=deepin-aiassistant
+UniqueName=fcitx-aiassistant
 _Name=桌面智能助手插件
 IconName=aiassistant
 Priority=1
